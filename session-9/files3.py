@@ -1,5 +1,5 @@
 # create a file
-f = open("book2.txt", "w")
+f = open("new_book.txt", "w")
 
 f.write("Hey there this is a new book")
 
