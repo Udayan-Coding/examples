@@ -1,3 +1,6 @@
+from colored import fg, bg, attr
+
+
 # Let the user know about options
 help_text = "Welcome to todo-management\nPress 1 for seeing all the todo.\nPress 2 for adding a todo.\nPress 3 for deleting a todo."
 
@@ -21,12 +24,16 @@ if choice == "1":
 
     # if there are no todos
     if len(todos) == 0:
-        print("No todos exists at the moment.")
+        color = fg("red")
+        reset = attr("reset")
+        print(color + "No todos exists at the moment." + reset)
         exit()
 
+    color = fg("yellow")
+    reset = attr("reset")
     # prints the todos
     for i in range(0, len(todos)):
-        print(f"[{i + 1}] {todos[i]}")
+        print(f"{color} [{i + 1}] {todos[i]} {reset}")
 
     # close the file
     file.close()
